@@ -3,5 +3,7 @@
 !kitty/
 !nvim/**
 !kitty/**
+!.tmux/
+!.tmux/**
 !.gitignore
 
