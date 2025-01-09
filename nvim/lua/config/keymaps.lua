@@ -21,4 +21,3 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- Selection, Copy, Paste
-keymap.set("n", "<leader>g", "gg0", { desc = "Put the cursor on 1st line 1st position" })
