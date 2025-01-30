@@ -1,5 +1,9 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
+-- 42 Header Settings
+vim.g.user42 = "brunmigu"
+vim.g.mail42 = "brunmigu@student.42porto.com"
+
 local opt = vim.opt
 
 opt.relativenumber = true

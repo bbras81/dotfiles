@@ -1,4 +1,7 @@
 *
+
+!.oh-my-zsh/
+!.oh-myh-zsh/**
 !nvim/
 !kitty/
 !nvim/**
