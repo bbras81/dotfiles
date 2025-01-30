@@ -8,5 +8,5 @@
 !kitty/**
 !.tmux/
 !.tmux/**
-!.gitignore
+
 
