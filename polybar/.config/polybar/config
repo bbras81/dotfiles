@@ -10,7 +10,7 @@ disabled = #cdd6f4
 
 [bar/mainbar]
 width = 100%
-height = 20pt
+height = 22pt
 radius = 6
 
 ; dpi = 96
@@ -18,26 +18,26 @@ radius = 6
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3pt
+line-size = 0
 line-color = #cba6f7
-border-size = 3pt
+border-size = 0pt
 border-color = #00000000
 
 padding-left = 0
 padding-right = 1
 
-module-margin = 1
+module-margin = 0
 
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = JetBrainsMonoNerdFonts;2
+font-0 =CaskaydiaCoveNerdFontMono:style=Regular
 
 modules-left = xworkspaces 
-modules-center = xwindow
-modules-right = filesystem pulseaudio memory cpu network date 
+modules-center =
+modules-right =  date  powermenu
 
-tray-position = none
+tray-position = right
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -69,7 +69,7 @@ type = internal/xworkspaces
 label-active = %name%
 label-active-background = ${colors.background-alt}
 label-active-underline= ${colors.primary}
-label-active-padding = 1
+label-active-padding =1
 
 label-occupied = %name%
 label-occupied-padding = 1
@@ -85,7 +85,7 @@ label-empty-padding = 1
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:60:...%
-
+; ==========================================
 [module/filesystem]
 type = internal/fs
 interval = 25
@@ -97,6 +97,7 @@ label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
 
+; ==========================================
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -109,6 +110,7 @@ label-volume = %percentage%%
 label-muted = muted
 label-muted-foreground = ${colors.disabled}
 
+; ==========================================
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -121,6 +123,7 @@ label-indicator-margin = 1
 label-indicator-foreground = ${colors.background}
 label-indicator-background = ${colors.secondary}
 
+; ==========================================
 [module/memory]
 type = internal/memory
 interval = 2
@@ -128,6 +131,7 @@ format-prefix = "RAM "
 format-prefix-foreground = ${colors.primary}
 label = %percentage_used:2%%
 
+; ==========================================
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -218,5 +222,14 @@ label-foreground = ${colors.primary}
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
+
+
+
+; ======================= My conf =====================
+[module/battery-combined-udev]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/battery-combined-udev.sh
+tail = true
+
 
 ; vim:ft=dosini

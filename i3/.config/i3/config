@@ -14,6 +14,14 @@ for_window [class="^.*"] border none
 
 set $mod Mod4
 
+#-----------------------windows------------------------------
+# Outer gaps for all windows: space along the screen edges.
+gaps outer 3px
+gaps inner 3px
+
+
+
+#---.--------------------------------------------------------
 
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/.config/backgrounds/nice-blue-background.png
@@ -37,7 +45,7 @@ exec --no-startup-id dex --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
+exec_always --no-startup-id i3-msg 'workspace 1'
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -73,6 +81,12 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show combi
 #bindsym $mod+space exec --no-startup-id rofi -show combi
 #bindsym $mod+Tab exec --no-startup-id rofi -show window
+
+#------------------------------------------------
+bindsym $mod+Shift+s exec systemctl suspend
+bindsym $mod+Shift+p exec systemctl poweroff
+bindsym $mod+Shift+o exec systemctl reboot
+
 
 
 # change focus
