@@ -1,6 +1,6 @@
 [colors]
 background = #CC1E1E2E
-background-alt =#40cba6f7
+background-alt = #40cba6f7
 foreground = #f2cdcd
 foreground-alt = #f5e0dc
 primary = #cba6f7
@@ -13,29 +13,31 @@ width = 100%
 height = 22pt
 radius = 6
 
-; dpi = 96
-
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 0
-line-color = #cba6f7
+line-color = ${colors.primary}
 border-size = 0pt
 border-color = #00000000
 
 padding-left = 0
 padding-right = 1
 
-module-margin = 0
+module-margin = 1
 
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 =CaskaydiaCoveNerdFontMono:style=Regular
 
-modules-left = xworkspaces 
+font-0 = CaskaydiaCoveNerdFontMono:style=Regular;pixelsize=12;1
+font-1 = SymbolsNerdFontMono-Regular:style=Regular;pixelsize=18;1
+
+
+
+modules-left = xworkspaces
 modules-center =
-modules-right =  date  powermenu
+modules-right = battery wifi date powermenu
 
 tray-position = right
 cursor-click = pointer
@@ -43,20 +45,6 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
-; wm-restack = generic
-; wm-restack = bspwm
-; wm-restack = i3
-
-; override-redirect = true
-
-; This module is not active by default (to enable it, add it to one of the
-; modules-* list above).
-; Please note that only a single tray can exist at any time. If you launch
-; multiple bars with this module, only a single one will show it, the others
-; will produce a warning. Which bar gets the module is timing dependent and can
-; be quite random.
-; For more information, see the documentation page for this module:
-; https://polybar.readthedocs.io/en/stable/user/modules/tray.html
 [module/systray]
 type = internal/tray
 
@@ -68,8 +56,8 @@ type = internal/xworkspaces
 
 label-active = %name%
 label-active-background = ${colors.background-alt}
-label-active-underline= ${colors.primary}
-label-active-padding =1
+label-active-underline = ${colors.primary}
+label-active-padding = 1
 
 label-occupied = %name%
 label-occupied-padding = 1
@@ -82,133 +70,6 @@ label-empty = %name%
 label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:60:...%
-; ==========================================
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
-
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.disabled}
-
-; ==========================================
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume-prefix = " "
-format-volume-prefix-foreground = ${colors.primary}
-format-volume = <label-volume>
-
-label-volume = %percentage%%
-
-label-muted = muted
-label-muted-foreground = ${colors.disabled}
-
-; ==========================================
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-label-layout = %layout%
-label-layout-foreground = ${colors.primary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-foreground = ${colors.background}
-label-indicator-background = ${colors.secondary}
-
-; ==========================================
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${colors.primary}
-label = %percentage_used:2%%
-
-; ==========================================
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.primary}
-label = %percentage:2%%
-
-;---------NETWORK-------------------------
-
-[module/wired-network]
-type = internal/network
-interface = emp3s0f3u4u1
-
-[module/wireless-network]
-type = internal/network
-interface = wlan0
-
-[module/network]
-type = internal/network
-; Name of the network interface to display. You can get the names of the
-; interfaces on your machine with `ip link`
-; Wireless interfaces often start with `wl` and ethernet interface with `eno` or `eth`
-interface = wlan0
-
-; If no interface is specified, polybar can detect an interface of the given type.
-; If multiple are found, it will prefer running interfaces and otherwise just
-; use the first one found.
-; Either 'wired' or 'wireless'
-; New in version 3.6.0
-interface-type = wireless
-
-; Seconds to sleep between updates
-; Default: 1
-interval = 3.0
-
-; NOTE: Experimental (might change or be removed in the future)
-; Test connectivity every Nth update by pinging 8.8.8.8
-; In case the ping fails 'format-packetloss' is used until the next ping
-; A value of 0 disables the feature
-; Default: 0
-;ping-interval = 3
-
-; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
-; Minimum output width of upload/download rate
-; Default: 3
-udspeed-minwidth = 5
-
-; Accumulate values from all interfaces
-; when querying for up/downspeed rate
-; Default: false
-accumulate-stats = true
-
-; Consider an `UNKNOWN` interface state as up.
-; Some devices like USB network adapters have 
-; an unknown state, even when they're running
-; Default: false
-unknown-as-up = true
-
-; The unit used for displaying network speeds
-; For example if set to the empty string, a speed of 5 KB/s is displayed as 5 K
-; Default: B/s
-; New in version 3.6.0
-speed-unit = ''
-
-
-;-----------------------------------------
-
-;[module/wlan]
-;inherit = network-base
-;interface-type = wireless
-;label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip%
-
-;[module/eth]
-;inherit = network-base
-;interface-type = wired
-;label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
-
 [module/date]
 type = internal/date
 interval = 1
@@ -216,20 +77,23 @@ interval = 1
 date = %H:%M
 date-alt = %Y-%m-%d %H:%M:%S
 
-label = %date%
+label = %{T1}%{T-} %date%
 label-foreground = ${colors.primary}
+
+[module/battery]
+type = custom/script
+exec = ~/.config/polybar/scripts/battery.sh
+interval = 10
+
+[module/wifi]
+type = custom/script
+exec = ~/.config/polybar/scripts/wifi-menu.sh
+click-left = ~/.config/polybar/scripts/wifi-menu.sh menu
+interval = 10
 
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
 
-
-
-; ======================= My conf =====================
-[module/battery-combined-udev]
-type = custom/script
-exec = ~/.config/polybar/polybar-scripts/battery-combined-udev.sh
-tail = true
-
-
 ; vim:ft=dosini
+
