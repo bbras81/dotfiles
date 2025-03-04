@@ -15,8 +15,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh -r
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id networkmanager-dmenu
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-#-----------------------Keybindings------------------------------
+exec --no-startup-id nm-appplet
+#----------------------Keybindings------------------------------
 
 # Terminal
 bindsym $mod+Return exec kitty
@@ -31,6 +31,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+s exec systemctl suspend
 bindsym $mod+Shift+p exec systemctl poweroff
 bindsym $mod+Shift+o exec systemctl reboot
+
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+
 
 # Volume controls
 set $refresh_i3status killall -SIGUSR1 i3status

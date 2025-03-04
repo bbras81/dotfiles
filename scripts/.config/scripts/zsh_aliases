@@ -1,0 +1,23 @@
+## Abre automaticamente o editor na pagina dos alias
+	alias alcf='nvim ~/.zshrc'
+	alias alup='source ~/.zshrc'
+## Alias costumizado
+
+	###Apps
+		alias chm='google-chrome'
+		alias v='nvim'
+	###Pastas
+		alias ..='cd ..'
+        alias prog='cd && cd Documents/development'
+	###Listagens
+		alias ls='ls -lah'
+	### Update
+		alias update='sudo pacman -Syy'
+	### Sistema
+		alias c='clear'
+		alias de='deactivate'
+		alias cod='windsurf'
+		
+	### scripts 
+		alias com='auto_commit.sh'
+		alias pul='source pull_source.sh'
