@@ -16,7 +16,7 @@ elif [ "$capacity" -ge 40 ]; then
 elif [ "$capacity" -ge 20 ]; then
   icon=""
 else
-  icon="\uf244"
+  icon=""
 fi
 
 # Mostra o ícone e o nível da bateria
