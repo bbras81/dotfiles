@@ -42,6 +42,17 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+
+#INSTALADOR
+#sudo pacman -S brightnessctl
+# Aumentar brilho (F5)
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+
+# Diminuir brilho (F4)
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+# Mapeamento manual se necessário
+
 # Window focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
