@@ -22,3 +22,4 @@ source $ZSH/oh-my-zsh.sh
 
 # Carregar aliases personalizados
 source ~/.config/scripts/zsh_aliases
+eval "$(dircolors -b ~/.dircolors)"
