@@ -37,7 +37,7 @@ font-1 = Symbols Nerd Font:style=Regular;pixelsize=14;1
 
 modules-left = xworkspaces
 modules-center =
-modules-right =  battery wifi date 
+modules-right =  battery wifi cpu memory date 
 
 tray-position = none
 cursor-click = pointer
@@ -91,6 +91,12 @@ type = custom/script
 exec = ~/.config/polybar/scripts/wifi-menu.sh
 click-left = ~/.config/polybar/scripts/wifi-menu.sh menu
 interval = 1
+label-foreground = ${colors.primary}
+
+[module/cpu]
+type = custom/script
+exec = ~/.config/polybar/scripts/sysinfo.sh
+interval = 2
 label-foreground = ${colors.primary}
 
 [settings]
