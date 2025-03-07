@@ -1,5 +1,6 @@
 ## Abre automaticamente o editor na pagina dos alias
-	alias alcf='nvim ~/.zshrc'
+	alias zscf='nvim ~/.zshrc'
+  alias alcf='nvim ~/.config/scripts/zsh_aliases'
 	alias alup='source ~/.zshrc'
 ## Alias costumizado
 
