@@ -14,7 +14,7 @@ exec --no-startup-id feh --bg-scale ~/.config/backgrounds/nice-blue-background.p
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh -r
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id networkmanager-dmenu
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 exec --no-startup-id nm-appplet
 #----------------------Keybindings------------------------------
 

@@ -22,3 +22,6 @@
 	### scripts 
 		alias com='auto_commit.sh'
 		alias pul='source pull_source.sh'
+
+  ### Servers
+    alias njs='npm run dev'
