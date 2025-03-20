@@ -53,6 +53,10 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Mapeamento manual se necessário
 
+
+bindsym $mod1+w exec ~/.config/polybar/scripts/wifi-menu.sh menu
+
+
 # Window focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
