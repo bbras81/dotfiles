@@ -1,19 +1,24 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.clipboard = "unnamedplus"
+vim.opt.swapfile = false
+vim.wo.number = true
 
 vim.g.mapleader = " "
-vim.g.background = "light"
+vim.g.maplocalleader = " "
 
-vim.opt.swapfile = false
+-- Melhor navegação entre janelas
+local map = vim.keymap.set
+map("n", "<C-k>", ":wincmd k <CR>")
+map("n", "<C-j>", ":wincmd j <CR>")
+map("n", "<C-h>", ":wincmd h <CR>")
+map("n", "<C-l>", ":wincmd l <CR>")
+map("n", "<leader>h", ":nohlsearch<CR>", { noremap = true, silent = true })
 
--- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
-
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.wo.number = true
+-- Mover linha para cima/baixo com Alt+j e Alt+k
+map("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+map("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
