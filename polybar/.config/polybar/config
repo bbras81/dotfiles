@@ -99,6 +99,13 @@ exec = ~/.config/polybar/scripts/sysinfo.sh
 interval = 2
 label-foreground = ${colors.primary}
 
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/bluetooth.sh
+click-left = ~/.config/polybar/scripts/bluetooth.sh --toggle
+click-right = ~/.config/polybar/scripts/bluetooth.sh --device
+interval = 5
+
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
