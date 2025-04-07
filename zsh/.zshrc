@@ -1,25 +1,40 @@
-# Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH:$HOME/.config/scripts"
-# Tema do ZSH
-ZSH_THEME="catppuccin"
-CATPPUCCIN_FLAVOR="mocha"
-CATPPUCCIN_SHOW_TIME=true
+# Created by Zap installer
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+plug "zsh-users/zsh-autosuggestions"
+plug "zap-zsh/supercharge"
+plug "zap-zsh/zap-prompt"
+plug "zsh-users/zsh-syntax-highlighting"
 
-# Ativar cores no ls
-export LS_COLORS="$(dircolors -b)"
-#alias ls='ls --color=auto'
+ plug "zap-zsh/fzf"
 
-# Plugins do ZSH
-plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
+###############
+### Aliases ###
+###############
 
-# Carregar Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+# Compiling
+alias ccw='cc -Wall -Wextra -Werror -g'
 
-# Carregar aliases personalizados
-source ~/.config/scripts/zsh_aliases
-eval "$(dircolors -b ~/.dircolors)"
+# Neovim
+alias v='nvim'
+alias sv='sudo -E nvim'
+
+# git
+alias ga='git add'
+alias gap='git add -p'
+alias gst='git status'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git pull'
+alias com='auto_commit.sh'
+alias pul='source pull_source.sh'
+
+# System
+alias v='nvim'
+alias prog='cd && cd Documents/development'
+alias ls='ls -la'
+alias l='ls -laht'
+alias c='clear'
+
+# Load and initialise completion system
+autoload -Uz compinit
+compinit
