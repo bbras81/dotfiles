@@ -22,3 +22,5 @@ map("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 map("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
+map("n", "<leader>fr", ":CFormat42<CR>")
