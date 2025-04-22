@@ -25,8 +25,8 @@ alias gst='git status'
 alias gc='git commit -m'
 alias gp='git push'
 alias gl='git pull'
-alias com='auto_commit.sh'
-alias pul='source pull_source.sh'
+alias com='/home/brunmigu/.config/scripts/auto_commit.sh'
+alias pul='/home/brunmigu/.config/scripts/source pull_source.sh'
 
 # System
 alias v='nvim'
@@ -34,7 +34,9 @@ alias prog='cd && cd Documents/development'
 alias ls='ls -la'
 alias l='ls -laht'
 alias c='clear'
+alias update='sudo apt update && sudo apt upgrade -y'
 
 # Load and initialise completion system
 autoload -Uz compinit
 compinit
+alias paco='/home/brunmigu/francinette/tester.sh'
