@@ -1,4 +1,0 @@
-# Nvim Configuration
-
-    Videos:
-        :
