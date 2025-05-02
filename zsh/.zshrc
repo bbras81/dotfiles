@@ -31,7 +31,7 @@ alias pul='/home/brunmigu/.config/scripts/source pull_source.sh'
 # System
 alias v='nvim'
 alias prog='cd && cd Documents/development'
-alias ls='ls -la'
+alias ls='ls -l'
 alias l='ls -laht'
 alias c='clear'
 alias update='sudo apt update && sudo apt upgrade -y'
